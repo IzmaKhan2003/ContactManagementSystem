@@ -60,4 +60,3 @@ function changePageTheme(theme, oldTheme) {
     .querySelector("span").textContent = theme == "light" ? "Dark" : "Light";
 }
 
-//change page change theme
