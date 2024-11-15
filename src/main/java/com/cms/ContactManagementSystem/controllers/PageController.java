@@ -10,13 +10,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cms.ContactManagementSystem.entities.User;
+import com.cms.ContactManagementSystem.forms.UserForm;
+import com.cms.ContactManagementSystem.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
 
 @Controller
-public class PageController {
+public class PageController{
 
     @RequestMapping("/home")
     public String home(Model model){
@@ -78,23 +80,6 @@ public class PageController {
             return "register";
         }
 
-        // TODO::Validate userForm[Next Video]
-
-        // save to database
-
-        // userservice
-
-        // UserForm--> User
-        // User user = User.builder()
-        // .name(userForm.getName())
-        // .email(userForm.getEmail())
-        // .password(userForm.getPassword())
-        // .about(userForm.getAbout())
-        // .phoneNumber(userForm.getPhoneNumber())
-        // .profilePic(
-        // "https://www.learncodewithdurgesh.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdurgesh_sir.35c6cb78.webp&w=1920&q=75")
-        // .build();
-
         User user = new User();
         user.setName(userForm.getName());
         user.setEmail(userForm.getEmail());
@@ -105,17 +90,17 @@ public class PageController {
         user.setProfilePic(
                 "https://www.learncodewithdurgesh.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdurgesh_sir.35c6cb78.webp&w=1920&q=75");
 
-        User savedUser = userService.saveUser(user);
+        // User savedUser = userService.saveUser(user);
 
-        System.out.println("user saved :");
+        // System.out.println("user saved :");
 
-        // message = "Registration Successful"
+        // // message = "Registration Successful"
 
-        // add the message:
+        // // add the message:
 
-        Message message = Message.builder().content("Registration Successful").type(MessageType.green).build();
+        // Message message = Message.builder().content("Registration Successful").type(MessageType.green).build();
 
-        session.setAttribute("message", message);
+        // session.setAttribute("message", message);
 
         // redirectto login page
         return "redirect:/register";
