@@ -1,6 +1,8 @@
+package com.cms.ContactManagementSystem.forms;
+
 import org.springframework.web.multipart.MultipartFile;
 
-import com.scm.validators.ValidFile;
+import com.cms.ContactManagementSystem.validators.ValidFile;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
