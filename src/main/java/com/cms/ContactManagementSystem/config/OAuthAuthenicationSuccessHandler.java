@@ -61,8 +61,7 @@ public class OAuthAuthenicationSuccessHandler implements AuthenticationSuccessHa
 
         if (authorizedClientRegistrationId.equalsIgnoreCase("google")) {
 
-            // google
-            // google attributes
+            
 
             user.setEmail(oauthUser.getAttribute("email").toString());
             user.setProfilePic(oauthUser.getAttribute("picture").toString());
@@ -73,8 +72,7 @@ public class OAuthAuthenicationSuccessHandler implements AuthenticationSuccessHa
 
         } else if (authorizedClientRegistrationId.equalsIgnoreCase("github")) {
 
-            // github
-            // github attributes
+          
             String email = oauthUser.getAttribute("email") != null ? oauthUser.getAttribute("email").toString()
                     : oauthUser.getAttribute("login").toString() + "@gmail.com";
             String picture = oauthUser.getAttribute("avatar_url").toString();
